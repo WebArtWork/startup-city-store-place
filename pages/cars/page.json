@@ -1,0 +1,40 @@
+{
+	"name": "cars",
+	"cars": [
+		{
+			"id": "/car",
+			"price": 1200,
+			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+        	"thumb": "https://neryxomka.com/template/img/welcome.png",
+			"name": "car"
+		},
+		{
+			"id": "/car",
+			"price": 1200,
+			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+        	"thumb": "https://neryxomka.com/template/img/welcome.png",
+			"name": "car"
+		},
+		{
+			"id": "/car",
+			"price": 1200,
+			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+        	"thumb": "https://neryxomka.com/template/img/welcome.png",
+			"name": "car"
+		}
+	],
+	 "groups": [
+		{
+			"categories": [
+				{
+					"name": "Category Name",
+					"tags": [
+						{
+							"name": "Tag Name"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,34 @@
+<section class="plan-page">
+    <div class="plan-page__container">
+        <div class="plan-page__main">
+            <span class="land-section__line_top"></span>
+            <span class="land-section__line_bottom"></span>
+
+                <div class="plan-page__slider plan-page-slider main-slider swiper">
+                    <div class="plan-page-slider__wrapper swiper-wrapper">
+                        <div class="plan-page-slider__slide plan-page-slide swiper-slide">
+                            <a data-fancybox="gallery" data-src="{{{plan.thumb}}}">
+                                <img src="{{{plan.thumb}}}" alt="{{{plan.name}}}"
+                                    class="plan-page-slide__img" />
+                            </a>
+                        </div>
+                        {% for thumb in plan.thumbs %}
+                        <div class="plan-page-slider__slide plan-page-slide swiper-slide">
+                            <a data-fancybox="gallery" data-src="{{{thumb}}}">
+                                <img src="{{{thumb}}}" alt="{{{plan.name}}}" class="plan-page-slide__img" />
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="plan-page-slider__pagination swiper-pagination"></div>
+                </div>
+
+            <div class="plan-page__info plan-page-info">
+                <h2 class="plan-page-info__name">{{{plan.name}}}</h2>
+
+                <p class="plan-page-info__desc">{{{plan.description}}}</p>
+            </div>
+        </div>
+    </div>
+</section>

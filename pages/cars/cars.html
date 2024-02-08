@@ -1,0 +1,87 @@
+<script type="module">
+	import Car from '/api/wjst/car';
+	import Dom from '/api/wjst/dom';
+	Car.perPage = 1;
+	let page = 1;
+
+    if ((await Car.page(1)).length < Car.perPage) {
+		Dom.remove('loadCars');
+	}
+
+	document.getElementById('loadCars').addEventListener('click', async () => {
+		page++;
+		const cars = await Car.page(page);
+
+        if (cars.length < Car.perPage) {
+		Dom.remove('loadCars');
+	}
+
+		for (const car of cars) {
+			if (!car.thumbs) {
+				car.thumbs = [];
+			}
+			Dom.add('cars', Dom.template('car', {
+				price: car.price,
+				thumb: car.thumb,
+				thumbs: car.thumbs.map(thumb => {
+					return Dom.template('car_thumb', {
+						name: car.name,
+						thumb
+					})
+				}),
+				name: car.name,
+				_id: car._id
+			}));
+		}
+	});
+</script>
+
+<section class="products-page">
+    <div class="products-page__container">
+        <h1 class="products-page__title title">{{{translate("artemvelihin.Cars")}}}</h1>
+
+        <div class="products-page__wrapper">
+            {% for car in cars %}
+
+            <div class="products-page__card products-page-card">
+                <a href="/car/{{{car.id}}}" class="products-page-card__img">
+                    <img src="{{{car.thumb}}}" alt="{{{car.name}}}" />
+
+                    {% if car.thumbs.length %} {% for thumb in
+                    car.thumbs %}
+
+                    <img src="{{{thumb}}}" alt="{{{product.name}}}" />
+                    {% endfor %} {% endif %}
+                </a>
+
+                <div class="products-page-card__text">
+                    <a href="/car/{{{car.id}}}" class="products-page-card__name">{{{car.name}}}</a>
+                    <span class="products-page-card__price">{{{car.price}}}</span>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <button class="load-more" id="loadCars">{{{translate("artemvelihin.Load more")}}}</button>
+
+    </div>
+</section>
+
+<div style="display: none;" id="template-product">
+	<div class="products-page__card products-page-card">
+		<a href="/car/{_id}" class="products-page-card__img">
+			<img src="{thumb}" alt="{name}" />
+			{thumbs}
+		</a>
+
+		<div class="products-page-card__text">
+			<a href="/car/{_id}" class="products-page-card__name">{name}</a>
+			<span class="products-page-card__price">{price}</span>
+		</div>
+	</div>
+</div>
+
+<div style="display: none;" id="template-car_thumb">
+	<img src="{thumb}" alt="{name}" />
+</div>

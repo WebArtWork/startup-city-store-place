@@ -1,0 +1,42 @@
+<section class="product">
+    <div class="product__container">
+        <div class="product__main">
+            <span class="land-section__line_top"></span>
+            <span class="land-section__line_bottom"></span>
+
+            <div class="product__slider product-slider main-slider swiper">
+                <div class="product-slider__wrapper swiper-wrapper">
+                    <div class="product-slider__slide product-slide swiper-slide">
+                        <a data-fancybox="gallery" data-src="{{{realestate.thumb}}}">
+                            <img src="{{{realestate.thumb}}}" alt="{{{realestate.name}}}" class="product-slide__img" />
+                        </a>
+                    </div>
+                    {% if realestate.thumbs.length %} {% for thumb in
+                    realestate.thumbs %}
+                    <div class="product-slider__slide product-slide swiper-slide">
+                        <a data-fancybox="gallery" data-src="{{{thumb}}}">
+                            <img src="{{{thumb}}}" alt="{{{realestate.name}}}" class="product-slide__img" />
+                        </a>
+                    </div>
+                    {% endfor %} {% endif %}
+                </div>
+
+                <div class="product-slider__pagination swiper-pagination"></div>
+            </div>
+
+            <div class="product__info product-info">
+                <div class="product-info__row">
+                    <h2 class="product-info__name">{{{realestate.name}}}</h2>
+                    <span class="product-info__price">{{{realestate.price}}}</span>
+                </div>
+
+                <div class="product-info__row product-info__buttons">
+                    <a href="#" class="product-info__add-to-cart">A{{{translate("artemvelihin.ADD TO CART")}}}</a>
+                    <a href="#" class="product-info__buy-now">{{{translate("artemvelihin.BUY NOW")}}}</a>
+                </div>
+
+                <p class="product-info__desc">{{{realestate.description}}}</p>
+            </div>
+        </div>
+    </div>
+</section>

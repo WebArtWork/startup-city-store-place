@@ -1,0 +1,214 @@
+<style>
+	.hero {
+		background-image: url("{{{variables.hero_bg}}}");
+	}
+
+	.cta {
+		background-image: url("{{{variables.cta_bg}}}");
+	}
+</style>
+
+<section class="hero">
+	<!-- 	<video autoplay muted loop class="hero__bgvideo">
+		<source src="{{{variables.hero_bg}}}" type="video/mp4" />
+	</video> -->
+
+	<div class="hero__container">
+		<div class="hero__main">
+			<h1 class="hero__title">{{{variables.hero_title}}}</h1>
+
+			<p class="hero__text">{{{variables.hero_text}}}</p>
+		</div>
+	</div>
+</section>
+
+{% if services.length %}
+<section class="services" id="services">
+	<div class="services__container">
+		{% if variables.services_title %}
+		<h2 class="services__title title">{{{variables.services_title}}}</h2>
+		{% endif %}
+
+		<div class="services__wrapper">
+			{% for service in services %}
+			<div class="services__item services-item">
+				<a href="/service/{{{service.id}}}" class="services-item__img">
+					<img src="{{{service.thumb}}}" alt="{{{service.name}}}" />
+					<span class="services-item__subtitle">
+						{{{service.name}}}
+					</span>
+				</a>
+
+				<p class="services-item__desc reveal">{{{service.short}}}</p>
+			</div>
+
+			<span class="services-item__divider reveal"></span>
+			{% endfor %}
+		</div>
+
+		{% if variables.services_button_text %}
+		<a href="/services" class="services__link">{{{variables.services_button_text}}}</a>
+		{% endif %}
+	</div>
+</section>
+{% endif %}
+
+{% if plans.length %}
+<section class="plans">
+	<div class="plans__container">
+		<div class="plans__header">
+			{% if variables.plans_title %}
+			<h2 class="plans__title title">
+				{{{variables.plans_title}}}
+			</h2>
+			{% endif %}
+
+			<hr class="plans__divider reveal" />
+
+			{% if variables.plans_button_text %}
+			<a href="/plans" class="plans__link reveal">{{{variables.plans_button_text}}}</a>
+			{% endif %}
+
+		</div>
+
+		<div class="plans__slider swiper">
+			<div class="swiper-wrapper">
+				{% for plan in plans %}
+
+				<a href="/plan/{{{plan.id}}}" class="plans__item plans-item swiper-slide">
+					<div class="plans-item__img">
+						<img src="{{{plan.thumb}}}" alt="{{{plan.name}}}" />
+					</div>
+					<h3 class="plans-item__title plans-item__title_dark">{{{plan.name}}}</h3>
+				</a>
+
+				{% endfor %}
+			</div>
+		</div>
+</section>
+{% endif %}
+
+{% if realestates.length %}
+<section class="products realestates">
+	<div class="products__container">
+		<div class="land-section ">
+			<span class="land-section__line_top reveal reveal__left"></span>
+			<span class="land-section__line_bottom reveal reveal__right"></span>
+			<div class="land-section__slider land-section-slider swiper">
+				<div class="services-slider__wrapper swiper-wrapper">
+					{% for realestate in realestates %}
+					<div class="land-section-slider__slide land-section-slide swiper-slide">
+						<a href="/realestate/{{{realestate.id}}}">
+							<img src="{{{realestate.thumb}}}" alt="{{{realestate.name}}}" />
+							<span class="land-section-slide__subtitle">
+								{{{realestate.name}}}
+							</span>
+						</a>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+			<div class="land-section__main">
+				{% if variables.realestates_title %}
+				<h2 class="land-section__title title">
+					{{{variables.realestates_title}}}
+				</h2>
+				{% endif %} {% if variables.realestates_text %}
+				<p class="land-section__text">{{{variables.realestates_text}}}</p>
+				{% endif %} {% if variables.realestates_button_text %}
+				<a href="/realestates" class="land-section__link">{{{variables.realestates_button_text}}}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+{% if cars.length %}
+<section class="products cars">
+	<div class="products__container">
+		<div class="land-section land-section_white">
+			<span class="land-section__line_top reveal reveal__left"></span>
+			<span class="land-section__line_bottom reveal reveal__right"></span>
+
+			<div class="land-section__main">
+				{% if variables.cars_title %}
+				<h2 class="land-section__title title">
+					{{{variables.cars_title}}}
+				</h2>
+				{% endif %} {% if variables.cars_text %}
+				<p class="land-section__text">{{{variables.cars_text}}}</p>
+				{% endif %} {% if variables.cars_button_text %}
+				<a href="/cars" class="land-section__link">{{{variables.cars_button_text}}}</a>
+				{% endif %}
+			</div>
+
+			<div class="land-section__slider land-section-slider swiper">
+				<div class="services-slider__wrapper swiper-wrapper">
+					{% for car in cars %}
+					<div class="land-section-slider__slide land-section-slide swiper-slide">
+						<a href="/car/{{{car.id}}}">
+							<img src="{{{car.thumb}}}" alt="{{{car.name}}}" />
+							<span class="land-section-slide__subtitle">
+								{{{car.name}}}
+							</span>
+						</a>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+
+
+{% if articles.length %}
+<section class="articles">
+	<div class="articles__container">
+		{% if variables.articles_title %}
+		<h2 class="articles__title title">{{{variables.articles_title}}}</h2>
+		{% endif %} {% if variables.articles_subtitle %}
+		<h3 class="articles__subtitle">{{{variables.articles_subtitle}}}</h3>
+		{% endif %}
+
+		<div class="articles__slider swiper">
+			<div class="articles__wrapper articles-wrapper swiper-wrapper">
+				{% for article in articles %}
+				<div class="articles-wrapper__item articles-item swiper-slide">
+					<div class="articles-item__img">
+						<img src="{{{article.thumb}}}" alt="{{{article.name}}}" />
+					</div>
+
+					<div class="articles-item__text">
+						<span class="articles-item__title">{{{article.name}}}</span>
+
+						<p class="articles-item__desc">{{{article.short}}}</p>
+						<a href="/article/{{{article.id}}}" class="articles-item__link">Read more</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+
+		{% if variables.articles_button_text %}
+		<a href="/articles" class="articles__link">
+			{{{variables.articles_button_text}}}
+		</a>
+		{% endif %}
+	</div>
+</section>
+{% endif %}
+
+<section class="cta">
+	<div class="cta__container">
+		{% if variables.cta_title %}
+		<h2 class="cta__title">{{{variables.cta_title}}}</h2>
+		{% endif %} {% if variables.cta_text %}
+		<p class="cta__text">{{{variables.cta_text}}}</p>
+		{% endif %}
+	</div>
+</section>

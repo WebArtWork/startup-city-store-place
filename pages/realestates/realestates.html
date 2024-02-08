@@ -1,0 +1,87 @@
+<script type="module">
+	import Realestate from '/api/wjst/realestate';
+	import Dom from '/api/wjst/dom';
+	Realestate.perPage = 1;
+	let page = 1;
+
+    if ((await Realestate.page(1)).length < Realestate.perPage) {
+		Dom.remove('loadRealestates');
+	}
+
+	document.getElementById('loadRealestates').addEventListener('click', async () => {
+		page++;
+		const realestates = await Realestate.page(page);
+
+        if (realestates.length < Realestate.perPage) {
+		Dom.remove('loadRealestates');
+	}
+
+		for (const realestate of realestates) {
+			if (!realestate.thumbs) {
+				realestate.thumbs = [];
+			}
+			Dom.add('realestates', Dom.template('realestate', {
+				price: realestate.price,
+				thumb: realestate.thumb,
+				thumbs: realestate.thumbs.map(thumb => {
+					return Dom.template('realestate_thumb', {
+						name: realestate.name,
+						thumb
+					})
+				}),
+				name: realestate.name,
+				_id: realestate._id
+			}));
+		}
+	});
+</script>
+
+<section class="products-page">
+    <div class="products-page__container">
+        <h1 class="products-page__title title">{{{translate("artemvelihin.Realestates")}}}</h1>
+
+        <div class="products-page__wrapper">
+            {% for realestate in realestates %}
+
+            <div class="products-page__card products-page-card">
+                <a href="/realestate/{{{realestate.id}}}" class="products-page-card__img">
+                    <img src="{{{realestate.thumb}}}" alt="{{{realestate.name}}}" />
+
+                    {% if realestate.thumbs.length %} {% for thumb in
+                    realestate.thumbs %}
+
+                    <img src="{{{thumb}}}" alt="{{{realestate.name}}}" />
+                    {% endfor %} {% endif %}
+                </a>
+
+                <div class="products-page-card__text">
+                    <a href="/realestate/{{{realestate.id}}}" class="products-page-card__name">{{{realestate.name}}}</a>
+                    <span class="products-page-card__price">{{{realestate.price}}}</span>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <button class="load-more" id="loadRealestates">{{{translate("artemvelihin.Load more")}}}</button>
+
+    </div>
+</section>
+
+<div style="display: none;" id="template-product">
+	<div class="products-page__card products-page-card">
+		<a href="/realestate/{_id}" class="products-page-card__img">
+			<img src="{thumb}" alt="{name}" />
+			{thumbs}
+		</a>
+
+		<div class="products-page-card__text">
+			<a href="/realestate/{_id}" class="products-page-card__name">{name}</a>
+			<span class="products-page-card__price">{price}</span>
+		</div>
+	</div>
+</div>
+
+<div style="display: none;" id="template-realestate_thumb">
+	<img src="{thumb}" alt="{name}" />
+</div>

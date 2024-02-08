@@ -1,0 +1,72 @@
+<script type="module">
+    import Plans from '/api/wjst/plan';
+    import Dom from '/api/wjst/dom';
+    Plans.perPage = 1;
+    let page = 1;
+
+    if ((await Plans.page(1)).length < Plans.perPage) {
+        Dom.remove('loadPlans');
+    }
+
+    document.getElementById('loadPlans').addEventListener('click', async () => {
+        page++;
+        const plans = await Plans.page(page);
+
+        if (plans.length < Plans.perPage) {
+            Dom.remove('loadPlans');
+        }
+
+        for (const plan of plans) {
+            if (!plan.thumbs) {
+                plan.thumbs = [];
+            }
+            Dom.add('plans', Dom.template('plan', {
+                price: plan.price,
+                thumb: plan.thumb,
+                thumbs: plan.thumbs.map(thumb => {
+                    return Dom.template('plan_thumb', {
+                        name: plan.name,
+                        thumb
+                    })
+                }),
+                name: plan.name,
+                _id: plan._id
+            }));
+        }
+    });
+</script>
+
+<section class="plans-page">
+    <div class="plans-page__container">
+        <h2 class="plans-page__title title">{{{translate("artemvelihin.Plans")}}}</h2>
+
+        <div class="plans-page__wrapper">
+            {% for plan in plans %}
+
+            <a href="/plan/{{{plan.id}}}" class="plans-page__card plans-page-card">
+                <div class="plans-page-card__img">
+                    <img src="{{{plan.thumb}}}" alt="{{{plan.name}}}" />
+                </div>
+                <span class="plans-page-card__title">{{{plan.name}}}</span>
+            </a>
+
+            {% endfor %}
+        </div>
+
+        <button class="load-more" id="loadPlans">{{{translate("artemvelihin.Load more")}}}</button>
+
+    </div>
+</section>
+
+<div style="display: none;" id="template-plan">
+    <a href="/plan/{_id}" class="plans-page__card plans-page-card">
+        <div class="plans-page-card__img">
+            <img src="{thumb}" alt="{name}" />
+        </div>
+        <span class="plans-page-card__title">{name}</span>
+    </a>
+</div>
+
+<div style="display: none;" id="template-plan_thumb">
+    <img src="{thumb}" alt="{name}" />
+</div>
