@@ -1,53 +1,35 @@
 {
 	"name": "services",
-	"services": [
-		{
-			"id": "",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "service"
-		},
-		{
-			"id": "",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "service"
-		},
-		{
-			"id": "",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "service"
-		},
-		{
-			"id": "",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "service"
-		},
-		{
-			"id": "",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "service"
-		},
-		{
-			"id": "",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "service"
-		},
-		{
-			"id": "",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "service"
-		},
-		{
-			"id": "",
-			"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-			"thumb": "https://neryxomka.com/template/img/welcome.png",
-			"name": "service"
-		}
+	"tags": [
+	  {
+		"name": "Cities",
+		"services": [
+		  {
+			"thumb": "/artemvelihin/img/1.jpg",
+			"name": "City name"
+		  },
+		  {
+			"thumb": "/artemvelihin/img/2.jpg",
+			"name": "City name"
+		  },
+		  {
+			"thumb": "/artemvelihin/img/3.jpg",
+			"name": "City name"
+		  },
+		  {
+			"thumb": "/artemvelihin/img/4.jpg",
+			"name": "City name"
+		  },
+		  {
+			"thumb": "/artemvelihin/img/5.jpg",
+			"name": "City name"
+		  },
+		  {
+			"thumb": "/artemvelihin/img/6.jpg",
+			"name": "City name"
+		  }
+		]
+	  }
 	]
-}
+  }
+  

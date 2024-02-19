@@ -16,7 +16,7 @@
 		"footer_logo": "/artemvelihin/img/logo.svg",
     
 		"hero_title": "The perfect real estate for you is already prepared",
-		"hero_text": "Ready-made website themes that will turn into your store in a few steps. Upgrade your business with KP.City.",
+		"hero_text": "Ready-made website themes that will turn into your store in a few steps. Upgrade your business withCity.",
 		"hero_link_text": "Learn more",
 		"hero_bg": "/artemvelihin/img/hero-bg.jpg",
 
@@ -39,11 +39,11 @@
 		"plans_text": "Choose a template that will give your store a clean and modern look, allowing your products to appear more appealing and capture customers attention.",
 
 
-		"articles_title": "News from KP.City",
-		"articles_subtitle": "What's new at KP.City",
+		"articles_title": "News from City",
+		"articles_subtitle": "What's new atCity",
 		"articles_button_text": "View all posts",
 
-		"cta_title": "Upgrade your business with KP.City",
+		"cta_title": "Upgrade your business withCity",
 		"cta_text": "Try on a website template that you like for your store",
 		"cta_button_text": "Try on",
 		"cta_bg": "/artemvelihin/img/cta-bg.jpg",
@@ -54,7 +54,7 @@
 		"twitter": "https://twitter.com/wawify_com",
 		"telegram": "https://t.me/wawify_news",
 
-    "footer_rights": "All rights Reserved © KP.City, 2023"
+    "footer_rights": "All rights Reserved © Businesses In Ca, 2024"
 	},
 
   "footer": {
@@ -157,63 +157,8 @@
         "thumb": "https://neryxomka.com/template/img/welcome.png",
         "name": "article"
       }
-    ],
-    "contents": [
-			{
-				"name": "NameTitle",
-				"thumb": "/artemvelihin/img/4.webp",
-				"url": "Lorem ipsum ?"
-			},
-			{
-				"name": "NameTitle",
-				"thumb": "/artemvelihin/img/8.webp",
-				"url": "Lorem ipsum ?"
-			},
-			{
-				"name": "NameTitle",
-				"thumb": "/artemvelihin/img/7.webp",
-				"url": "Lorem ipsum ?"
-			},
-			{
-				"name": "NameTitle",
-				"thumb": "/artemvelihin/img/5.webp",
-				"url": "Lorem ipsum ?"
-			}
-		]
+    ]
   },
-
-	"tags": [
-		{
-			"category": {
-				"group": "article"
-			},
-			"name": "Tag one"
-		},
-		{
-			"category": {
-				"group": "car"
-			},
-			"name": "Tag one"
-		},
-    {
-			"category": {
-				"group": "realestate"
-			},
-			"name": "Tag one"
-		},
-		{
-			"category": {
-				"group": "service"
-			},
-			"name": "Tag one"
-		},
-    {
-			"category": {
-				"group": "plan"
-			},
-			"name": "Tag one"
-		}
-	],
 
 	"groups": [
 		{

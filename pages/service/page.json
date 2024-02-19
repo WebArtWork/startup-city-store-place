@@ -2,11 +2,9 @@
 	"name": "service",
 	"service": {
 		"id": "/service",
-		"price": 1200,
-		"short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
-		"thumb": "https://neryxomka.com/template/img/welcome.png",
-        "thumbs": ["https://neryxomka.com/template/img/welcome.png", "https://neryxomka.com/template/img/welcome.png", "https://neryxomka.com/template/img/welcome.png", "https://neryxomka.com/template/img/welcome.png"],
-		"name": "service"
+		"thumb": "/artemvelihin/img/1.jpg",
+        "thumbs": ["/artemvelihin/img/2.jpg", "/artemvelihin/img/3.jpg"],
+		"description": "Nestled [geographical location], [City Name] boasts a rich history dating back to [historical milestone]. From its humble beginnings to its current status as a bustling metropolis, our city has evolved into a vibrant tapestry of cultures, traditions, and innovations.",
+		"name": "City name"
 	}
 }
